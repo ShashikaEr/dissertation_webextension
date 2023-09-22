@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: *'); //allow cross origin requests from any domain
 include ('readURL.php');
 
 $read = new ViewURL();
