@@ -27,16 +27,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function evaluateAlgorithm() {
         try {
-            let truePositives = 0;
+          //declaring and initialising variables. (at the begining all variables are initalise with 0)
+            let truePositives = 0; 
             let falsePositives = 0;
             let trueNegatives = 0;
             let falseNegatives = 0;
 
-            urlData.forEach((row) => {
-                const url = row.URL;
-                const actualLabel = parseInt(row.Status);
-                const algorithmLabel = applyRuleBasedAlgorithm(url);
-
+            urlData.forEach((row) => { //looping through URL array elements
+                const url = row.URL; //store the URL from the array eleent
+                const actualLabel = parseInt(row.Status); // store the actual status of the URL
+                const algorithmLabel = applyRuleBasedAlgorithm(url); //store the predicted status by algorithm
+                //conditional statements based on actual status and predicted status
                 if (algorithmLabel === 1 && actualLabel === 1) {
                     truePositives++;
                 } else if (algorithmLabel === 1 && actualLabel === 0) {
@@ -53,9 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const precision = truePositives *100 / (truePositives + falsePositives);
             const recall = truePositives *100 / (truePositives + falseNegatives);
         
-            document.getElementById('accuracy').textContent = accuracy.toFixed(2);
-            document.getElementById('precision').textContent = precision.toFixed(2); 
-            document.getElementById('recall').textContent = recall.toFixed(2);
+            document.getElementById('accuracy').textContent = accuracy.toFixed(2); //passing the value to html page
+            document.getElementById('precision').textContent = precision.toFixed(2);  //passing the value to html page
+            document.getElementById('recall').textContent = recall.toFixed(2); //passing the value to html page
+           //printing console messages
             console.log('Accuracy:', accuracy);
             console.log('TruePositive',truePositives);
             console.log('FalsePositive',falsePositives);

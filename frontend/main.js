@@ -85,8 +85,8 @@ function developerDB(){ //function to check developer blacklist
 
   function algorithm(){
       console.log('Algorithm is running');
-  var total = 0;
-  var threshold=0.3;
+  var total = 0; //declaring and initialise 0 to the total at the begining
+  var threshold=0.3; //set a threshold value
   
   
   //Rule 1 - Check for suspicious characters in URL hostname
